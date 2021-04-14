@@ -1,0 +1,140 @@
+html {
+    scroll-behavior: smooth;
+}
+h1 {
+    font-size: 46px;
+}
+
+h2 {
+    font-size: 40px;
+}
+a {
+    color: #5799d8;
+}
+
+@media only screen and not (max-width: 1000px) {
+    .aligned {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .aligned {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 16px !important;
+    }
+}
+
+
+body {
+    font-size: 20px;
+
+    background: #eeeefe;
+    margin: 0;
+    font-family: monospace;
+
+    --margin-amount: 20%;
+}
+
+#header {
+    top: 0;
+    background: #ffffff;
+    position: sticky;
+
+    width: 100%;
+
+    box-sizing: border-box;
+    border: 1px solid #bbbbbb;
+}
+
+#header-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#logo {
+    height: 80px;
+    padding: 1ex;
+}
+
+#right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-x: scroll;
+}
+.nav {
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+
+    padding-top: 20px;
+    border-bottom: 20px solid #00000000;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s color, 0.3s background;
+}
+
+.nav:hover {
+    background: #5799d8;
+    border-radius: 5px;
+    color: black;
+}
+
+.section {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.shadowed {
+    box-shadow:
+        inset 0px  11px 16px -10px rgb(0, 0, 0, 0.5),
+        inset 0px -11px 16px -10px rgb(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+#section-head {
+    background: #5799d8;
+}
+
+#section-events {
+    background: #D89657;
+}
+
+#section-contact-info {
+    background: #000000;
+}
+
+#contact {
+    padding: 1ex 0 1ex 40px;
+    box-sizing: border-box;
+    border-left: 10px solid #D89657;
+    text-align: left;
+}
+
+ul {
+    margin-top: 10px;
+    padding: 0 0 0 20px;
+}
+li {
+    margin-bottom: 10px;
+}
+.discord {
+    font-style: italic;
+    color: #888888;
+}
