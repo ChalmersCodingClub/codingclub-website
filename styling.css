@@ -120,10 +120,17 @@ body {
     background: #000000;
 }
 
+#resources {
+    border-left: 10px solid #5799d8;
+}
+
 #contact {
+    border-left: 10px solid #D89657;
+}
+
+.lefted {
     padding: 1ex 0 1ex 40px;
     box-sizing: border-box;
-    border-left: 10px solid #D89657;
     text-align: left;
 }
 
