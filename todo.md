@@ -5,8 +5,8 @@
 * Lägg till lite böcker bland länkarna
 * Berätta lite om gamla tävlingar
 
-## Teknikst
-* Separera css-filen i moduler så vi kan ha flera sidor lättale
+## Tekniskt
+* Separera css-filen i moduler så vi kan ha flera sidor lättare
 * Skapa en bas-html-fil
 * Separera färgerna in i variabler
 * Dark mode? Bara transitiona färgerna
