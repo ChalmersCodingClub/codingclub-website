@@ -113,15 +113,19 @@ body {
 }
 
 #section-events {
-    background: #D89657;
+    background: #F8B677;
 }
 
 #section-chalmerschallenge {
-    background: #38B657;
+    background: #28A647;
 }
 
 #section-contact-info {
-    background: #000000;
+    background: #DDDDDD;
+}
+
+#section-resources {
+    background: #222222;
 }
 
 #resources {
