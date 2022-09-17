@@ -31,6 +31,15 @@ a {
     }
 }
 
+.sponsortext {
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .sponsortext {
+        font-size: 15px;
+    }
+}
 
 body {
     font-size: 20px;
@@ -96,7 +105,7 @@ body {
 }
 
 .section {
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 100px;
     text-align: center;
 }
@@ -120,8 +129,12 @@ body {
     background: #28A647;
 }
 
+#section-sponsor {
+    background: #EEEEEE;
+}
+
 #section-contact-info {
-    background: #DDDDDD;
+    background: #eba8c7;
 }
 
 #section-resources {
@@ -133,7 +146,7 @@ body {
 }
 
 #contact {
-    border-left: 10px solid #A0A0A0;
+    border-left: 10px solid #bd5485;
 }
 
 .lefted {
@@ -151,5 +164,5 @@ li {
 }
 .discord {
     font-style: italic;
-    color: #888888;
+    color: #8d3a61;
 }
