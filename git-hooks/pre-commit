@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -eo pipefail
+
+echo '# Running pre-commit prettier autoformatting'
+
+if nix run --help &> /dev/null; then
+  echo '# Using prettier through "nix run nixpkgs#nodePackages.prettier"'
+  nix run 'nixpkgs#nodePackages.prettier' -- --write .
+elif prettier --help &> /dev/null; then
+  echo '# Using system-installed prettier'
+  prettier --write .
+else
+  echo '# ERROR: Please install nix (modern command) or prettier'
+fi
