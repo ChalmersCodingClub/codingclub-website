@@ -1,168 +1,167 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 h1 {
-    font-size: 46px;
+  font-size: 46px;
 }
 
 h2 {
-    font-size: 40px;
+  font-size: 40px;
 }
 a {
-    color: #5799d8;
+  color: #5799d8;
 }
 
 @media only screen and not (max-width: 1000px) {
-    .aligned {
-        width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .aligned {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media only screen and (max-width: 1000px) {
-    .aligned {
-        margin-left: 60px;
-        margin-right: 60px;
-    }
+  .aligned {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
 }
 @media only screen and (max-width: 600px) {
-    body {
-        font-size: 16px !important;
-    }
+  body {
+    font-size: 16px !important;
+  }
 }
 
 .sponsortext {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 1000px) {
-    .sponsortext {
-        font-size: 15px;
-    }
+  .sponsortext {
+    font-size: 15px;
+  }
 }
 
 body {
-    font-size: 20px;
+  font-size: 20px;
 
-    background: #eeeefe;
-    margin: 0;
-    font-family: monospace;
+  background: #eeeefe;
+  margin: 0;
+  font-family: monospace;
 
-    --margin-amount: 20%;
+  --margin-amount: 20%;
 }
 
 #header {
-    top: 0;
-    background: #ffffff;
-    position: sticky;
+  top: 0;
+  background: #ffffff;
+  position: sticky;
 
-    width: 100%;
+  width: 100%;
 
-    box-sizing: border-box;
-    border: 1px solid #bbbbbb;
+  box-sizing: border-box;
+  border: 1px solid #bbbbbb;
 }
 
 #header-inner {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 #logo {
-    height: 80px;
-    padding: 1ex;
+  height: 80px;
+  padding: 1ex;
 }
 
 #right {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow-x: scroll;
 }
 .nav {
-    display: block;
-    height: 100%;
-    box-sizing: border-box;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
 
-    padding-top: 20px;
-    border-bottom: 20px solid #00000000;
+  padding-top: 20px;
+  border-bottom: 20px solid #00000000;
 
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    transition: 0.3s color, 0.3s background;
+  transition: 0.3s color, 0.3s background;
 }
 
 .nav:hover {
-    background: #5799d8;
-    border-radius: 5px;
-    color: black;
+  background: #5799d8;
+  border-radius: 5px;
+  color: black;
 }
 
 .section {
-    padding-top: 40px;
-    padding-bottom: 100px;
-    text-align: center;
+  padding-top: 40px;
+  padding-bottom: 100px;
+  text-align: center;
 }
 
 .shadowed {
-    box-shadow:
-        inset 0px  11px 16px -10px rgb(0, 0, 0, 0.5),
-        inset 0px -11px 16px -10px rgb(0, 0, 0, 0.5);
-    color: #ffffff;
+  box-shadow: inset 0px 11px 16px -10px rgb(0, 0, 0, 0.5),
+    inset 0px -11px 16px -10px rgb(0, 0, 0, 0.5);
+  color: #ffffff;
 }
 
 #section-head {
-    background: #5799d8;
+  background: #5799d8;
 }
 
 #section-events {
-    background: #F8B677;
+  background: #f8b677;
 }
 
 #section-chalmerschallenge {
-    background: #28A647;
+  background: #28a647;
 }
 
 #section-sponsor {
-    background: #EEEEEE;
+  background: #eeeeee;
 }
 
 #section-contact-info {
-    background: #eba8c7;
+  background: #eba8c7;
 }
 
 #section-resources {
-    background: #222222;
+  background: #222222;
 }
 
 #resources {
-    border-left: 10px solid #5799d8;
+  border-left: 10px solid #5799d8;
 }
 
 #contact {
-    border-left: 10px solid #bd5485;
+  border-left: 10px solid #bd5485;
 }
 
 .lefted {
-    padding: 1ex 0 1ex 40px;
-    box-sizing: border-box;
-    text-align: left;
+  padding: 1ex 0 1ex 40px;
+  box-sizing: border-box;
+  text-align: left;
 }
 
 ul {
-    margin-top: 10px;
-    padding: 0 0 0 20px;
+  margin-top: 10px;
+  padding: 0 0 0 20px;
 }
 li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .discord {
-    font-style: italic;
-    color: #8d3a61;
+  font-style: italic;
+  color: #8d3a61;
 }
