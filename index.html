@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Chalmers Coding Club</title>
@@ -8,7 +9,9 @@
     <div id="header">
       <div class="aligned" id="header-inner">
         <div id="left">
-          <img id="logo" src="logo.png" />
+          <a href="#front-splash">
+            <img id="logo" src="logo.png" />
+          </a>
         </div>
 
         <div id="right">
@@ -18,6 +21,7 @@
           </a>
           <a class="nav" href="#section-events">Events</a>
           <a class="nav" href="#section-resources">Resurser</a>
+          <a class="nav" href="#section-sponsor">Sponsor</a>
           <a class="nav" href="#section-contact-info">Kontakt</a>
         </div>
       </div>
@@ -25,17 +29,17 @@
 
     <main>
       <div id="front-splash"></div>
-      <div class="section shadowed" id="section-head">
-        <div class="aligned">
-          <br /><br />
-          <h1 class="heading">CHALMERS CODING CLUB</h1>
-        </div>
+      <div
+        class="section shadowed"
+        id="section-head"
+        style="display: grid; place-items: center"
+      >
+        <h1 class="heading">CHALMERS CODING CLUB</h1>
       </div>
 
       <div class="section" id="section-about">
         <div class="aligned">
           <h2 class="heading">OM OSS</h2>
-
           Chalmers Coding Club är en nystartad kårförening. Vi sysslar främst
           med tävlingsprogrammering och liknande.
         </div>
@@ -81,15 +85,20 @@
           <h2 class="heading">RESURSER OCH LÄNKAR</h2>
 
           <div id="resources" class="lefted">
-            Klicka <a href="https://discord.gg/PtsMAyXHxj">här</a> för att gå
-            med i vår Discord-server.
+            Klicka
+            <a href="https://discord.gg/PtsMAyXHxj">här</a>
+            för att gå med i vår Discord-server.
 
             <br />
             <br />
             Några sidor för att öva tävlingsprogrammering:
             <ul>
-              <li><a href="https://open.kattis.com"> Kattis </a></li>
-              <li><a href="https://codeforces.com/"> Codeforces </a></li>
+              <li>
+                <a href="https://open.kattis.com"> Kattis </a>
+              </li>
+              <li>
+                <a href="https://codeforces.com/"> Codeforces </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -98,22 +107,21 @@
       <div class="section" id="section-sponsor">
         <div class="aligned">
           <h2 class="heading">SPONSOR</h2>
-          <div style="display: flex">
-            <div style="width: 750px">
-              <br /><br />
+          <div class="content">
+            <a
+              href="https://www.superprof.se/kurser/programmering/sweden/"
+              style="min-width: 100px; max-width: 25%"
+            >
               <img src="superprof.png" style="width: 100%" />
-            </div>
+            </a>
 
-            <div class="lefted" style="flex-grow: 1">
+            <div class="lefted">
               <h3>Om Superprof</h3>
               <p class="sponsortext">
                 Superprof är en utbildningsplattform som kopplar samman
                 privatlärare och elever med varandra. Förutom läxhjälp är det
                 många som letar efter privatlektioner i
-                <a
-                  href="https://www.superprof.se/kurser/programmering/sweden/"
-                  target="_blank"
-                >
+                <a href="https://www.superprof.se/kurser/programmering/sweden/">
                   programmering hos Superprof</a
                 >.
               </p>
@@ -129,6 +137,18 @@
             </div>
           </div>
         </div>
+        <style>
+          #section-sponsor .content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+          }
+          @media only screen and (min-width: 80rem) {
+            #section-sponsor .content {
+              flex-direction: row;
+            }
+          }
+        </style>
       </div>
 
       <div class="section" id="section-contact-info">
@@ -136,41 +156,64 @@
           <h2 class="heading">KONTAKT</h2>
 
           <div id="contact" class="lefted">
-            Enklast är att kontakta oss på vår Discord-server.
+            Enklast är att kontakta oss på vår
+            <a href="https://discord.gg/PtsMAyXHxj"> Discord-server</a>.
             <br />
             <br />
             <b> Ordförande: </b>
             <ul>
               <li>
-                Gustav Kalander <span class="discord">(Gustav#0500)</span>
+                Gustav Kalander
+                <span class="discord">(Gustav#0500)</span>
               </li>
             </ul>
             <b> Övriga styrelsemedlemmar: </b>
             <ul>
               <li>
-                Jens Kollberg <span class="discord">(kaskelott#6504)</span>
+                Jens Kollberg
+                <span class="discord">(kaskelott#6504)</span>
               </li>
               <li>
-                Julia Mårtensson <span class="discord">(Naphthalene#2309)</span>
+                Julia Mårtensson
+                <span class="discord">(Naphthalene#2309)</span>
               </li>
-              <li>Loke Gustafsson <span class="discord">(Loke#4835)</span></li>
-              <li>Victor Song <span class="discord">(Victor#6359)</span></li>
+              <li>
+                Loke Gustafsson
+                <span class="discord">(Loke#4835)</span>
+              </li>
+              <li>
+                Victor Song
+                <span class="discord">(Victor#6359)</span>
+              </li>
             </ul>
             <b> Valberedning: </b>
             <ul>
               <li>
-                Jonathan Lööv <span class="discord">(deadbraincoral#8079)</span>
+                Jonathan Lööv
+                <span class="discord">(deadbraincoral#8079)</span>
               </li>
             </ul>
             <b> Revisor: </b>
             <ul>
               <li>
-                Rebecka Mårtensson <span class="discord">(Rebecka#5090)</span>
+                Rebecka Mårtensson
+                <span class="discord">(Rebecka#5090)</span>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </main>
+    <script>
+      function propagateNavbarHeight() {
+        let height = document.getElementById("header").offsetHeight;
+        document.documentElement.style.setProperty(
+          "--scroll-offset",
+          height + "px"
+        );
+      }
+      window.addEventListener("resize", propagateNavbarHeight);
+      propagateNavbarHeight();
+    </script>
   </body>
 </html>

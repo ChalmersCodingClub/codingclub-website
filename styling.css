@@ -47,8 +47,6 @@ body {
   background: #eeeefe;
   margin: 0;
   font-family: monospace;
-
-  --margin-amount: 20%;
 }
 
 #header {
@@ -91,9 +89,8 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
 
   transition: 0.3s color, 0.3s background;
 }
@@ -116,6 +113,16 @@ body {
   color: #ffffff;
 }
 
+:root {
+  --scroll-offset: 10rem;
+}
+
+:target {
+  content: "";
+  display: block;
+  scroll-margin-top: var(--scroll-offset);
+}
+
 #section-head {
   background: #5799d8;
 }
@@ -125,7 +132,7 @@ body {
 }
 
 #section-chalmerschallenge {
-  background: #28a647;
+  background: #29703c;
 }
 
 #section-sponsor {
