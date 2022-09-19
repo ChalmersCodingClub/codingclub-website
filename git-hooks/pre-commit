@@ -6,7 +6,7 @@ echo '# Running pre-commit prettier autoformatting'
 
 if nix run --help &> /dev/null; then
   echo '# Using prettier through "nix run nixpkgs#nodePackages.prettier"'
-  nix run 'nixpkgs#nodePackages.prettier' -- --write .
+  nix run 'github:NixOS/nixpkgs/f677051b8dc0b5e2a9348941c99eea8c4b0ff28f#nodePackages.prettier' -- --write .
 elif prettier --help &> /dev/null; then
   echo '# Using system-installed prettier'
   prettier --write .
