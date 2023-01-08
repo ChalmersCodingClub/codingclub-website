@@ -76,7 +76,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  overflow-x: scroll;
+  /*overflow-x: scroll;*/
 }
 .nav {
   display: block;
