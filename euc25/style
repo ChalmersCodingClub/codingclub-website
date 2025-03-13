@@ -1,0 +1,16 @@
+    <style>
+        body {
+            margin: auto;
+            width: 840px;
+        }
+
+        img {
+            height: 360px;
+            margin: auto;
+        }
+
+        div {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+    </style>
