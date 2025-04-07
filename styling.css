@@ -113,11 +113,6 @@ body {
   color: #ffffff;
 }
 
-.unshadowed {
-  box-shadow: none;
-  color: #000000;
-}
-
 :root {
   --scroll-offset: 10rem;
 }
@@ -134,18 +129,6 @@ body {
 
 #section-events {
   background: #f8b677;
-}
-
-#section-teater {
-  background: #124364;
-}
-
-#section-bok {
-  background: #c07bc9;
-}
-
-#section-history {
-  background: #3f2d08;
 }
 
 #section-chalmerschallenge {
