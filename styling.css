@@ -68,7 +68,7 @@ body {
 }
 
 #logo {
-  height: 80px;
+  height: 73px;
   padding: 1ex;
 }
 
@@ -86,13 +86,15 @@ body {
   padding-top: 20px;
   border-bottom: 20px solid #00000000;
 
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
 
   display: grid;
   place-items: center;
 
   transition: 0.3s color, 0.3s background;
+
+  font-size: 0.89em;
 }
 
 .nav:hover {
@@ -125,6 +127,14 @@ body {
 
 #section-head {
   background: #5799d8;
+}
+
+#section-about {
+  background: #b47726;
+}
+
+#section-tisdag {
+  background: #d8d64d;
 }
 
 #section-events {
