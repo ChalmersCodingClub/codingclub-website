@@ -53,6 +53,9 @@ body {
   top: 0;
   background: #ffffff;
   position: sticky;
+  /* Utan z-index hamnar headern under element som bildar egen stacking context
+     (t.ex. schemats transform på /meetup), eftersom de kommer senare i DOM:en. */
+  z-index: 10;
 
   width: 100%;
 

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <title>Tisdagsträffar – Chalmers Coding Club</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styling2.css" />
+    <link rel="canonical" href="https://chalmerscoding.club/meetup" />
+    <style>
+      #tisdag-hero {
+        background: #d8d64d;
+        padding: 48px 0 56px;
+        text-align: center;
+        box-shadow: inset 0px -11px 16px -10px rgb(0, 0, 0, 0.5);
+      }
+
+      #tisdag-hero h1 {
+        margin: 0 0 0.4em;
+        letter-spacing: 2px;
+      }
+
+      #tisdag-hero p {
+        margin: 0.4em 0;
+      }
+
+      #tisdag-hero a {
+        color: #2f5f92;
+      }
+
+      #tisdag-main {
+        padding: 48px 0 80px;
+      }
+
+      /* Kortet som Google-arket ligger i, så det inte ser ut som ett kalkylblad
+         inklistrat mitt på sidan. */
+      .schema-card {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+        overflow: hidden;
+      }
+
+      .schema-card-header {
+        padding: 14px 20px;
+        background: #d8d64d;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+        font-size: 0.9em;
+      }
+
+      .schema-card-header b {
+        letter-spacing: 1px;
+      }
+
+      /* Arket är cross-origin, så varken kolumnbredder eller gridlinjer går att
+         styla härifrån. Tabellen är ~690px bred oavsett hur brett kortet är, så
+         vi skalar hela iframen till kortets bredd i stället (se fitSchema).
+         Ramen klipper det som hamnar utanför medan skalningen räknas ut. */
+      .schema-frame {
+        overflow: hidden;
+      }
+
+      #tisdag-schema {
+        display: block;
+        width: 700px;
+        height: 890px;
+        border: none;
+        background: #ffffff;
+        transform-origin: top left;
+      }
+
+      #current-week {
+        max-width: 900px;
+        margin: 0 auto 20px;
+        font-size: 1.7em;
+      }
+
+      #current-week-nr {
+        background: #d8d64d;
+        border-radius: 6px;
+        padding: 2px 10px;
+        font-weight: bold;
+      }
+
+      #tisdag-back {
+        text-align: center;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div class="aligned" id="header-inner">
+        <div id="left">
+          <a href="../index.html">
+            <img id="logo" src="../logo.png" />
+          </a>
+        </div>
+
+        <div id="right">
+          <a class="nav" href="../index.html#section-about">Om oss</a>
+          <a class="nav" href="../index.html#section-tisdag">Tisdagsträffar</a>
+          <a class="nav" href="../index.html#section-chalmerschallenge"
+            >Chalmers Challenge</a
+          >
+          <a class="nav" href="../index.html#section-bootcamp">Boot Camp</a>
+          <a class="nav" href="../index.html#section-nwerc">NWERC</a>
+          <a class="nav" href="../index.html#section-events">Events</a>
+          <a class="nav" href="../index.html#section-sponsor">Sponsorer</a>
+          <a class="nav" href="../index.html#section-contact-info">Kontakt</a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div id="tisdag-hero">
+        <div class="aligned">
+          <h1 class="heading">TISDAGSTRÄFFAR</h1>
+          <p>
+            Varje tisdag ses vi för att lära oss nya algoritmer och gött häng :)
+          </p>
+          <p>
+            Alla är välkomna och vi brukar bjuda på baguetter 😋
+          </p>
+          <p>
+            Frågor? Hör av dig på
+            <a href="https://discord.gg/PtsMAyXHxj" target="_blank">Discord</a>!
+          </p>
+        </div>
+      </div>
+
+      <div id="tisdag-main">
+        <div class="aligned">
+          <p id="current-week" hidden>
+            Denna vecka: <span id="current-week-nr"></span>
+          </p>
+
+          <div class="schema-card">
+            <div class="schema-card-header">
+              <b>SCHEMA</b>
+            </div>
+            <div class="schema-frame">
+              <iframe
+                id="tisdag-schema"
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDjkbBupYAg4ObceFJJsP90tFQVqKk4oulfVBMA_NFM0fo8ssQRKqqzLZ6pQnCfz032T7smgDFipGx/pubhtml?gid=1392261903&amp;single=true&amp;widget=false&amp;chrome=false&amp;headers=false&amp;range=A1:C43"
+                title="Schema för tisdagsträffarna"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+          <div id="tisdag-back">
+            <a href="../index.html">&#8592; Tillbaka till startsidan</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Veckonumret ska alltid vara Sveriges, oavsett var besökaren sitter.
+      function stockholmWeek(now) {
+        const parts = new Intl.DateTimeFormat("sv-SE", {
+          timeZone: "Europe/Stockholm",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        }).formatToParts(now);
+        const get = (t) => Number(parts.find((p) => p.type === t).value);
+
+        // ISO-8601: veckan tillhör det år som veckans torsdag ligger i.
+        const d = new Date(Date.UTC(get("year"), get("month") - 1, get("day")));
+        d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7) + 3);
+        const jan4 = new Date(Date.UTC(d.getUTCFullYear(), 0, 4));
+        jan4.setUTCDate(jan4.getUTCDate() - ((jan4.getUTCDay() + 6) % 7) + 3);
+        return 1 + Math.round((d - jan4) / 604800000);
+      }
+
+      function showCurrentWeek() {
+        const row = document.getElementById("current-week");
+        try {
+          document.getElementById("current-week-nr").textContent =
+            "v. " + stockholmWeek(new Date());
+          row.hidden = false;
+        } catch (e) {
+          // Hellre ingen rad alls än ett trasigt veckonummer.
+          row.hidden = true;
+        }
+      }
+      showCurrentWeek();
+
+      // Arkets naturliga storlek: 3 kolumner (57+177+442px) + ramar och
+      // body-marginal, samt 43 rader à 20px. Skalas till kortets bredd så det
+      // varken blir tomrum till höger eller sidscroll på mobil.
+      const SCHEMA_W = 700;
+      const SCHEMA_H = 890;
+
+      function fitSchema() {
+        const frame = document.querySelector(".schema-frame");
+        const scale = frame.clientWidth / SCHEMA_W;
+        document.getElementById("tisdag-schema").style.transform =
+          "scale(" + scale + ")";
+        frame.style.height = SCHEMA_H * scale + "px";
+      }
+      window.addEventListener("resize", fitSchema);
+      fitSchema();
+
+      function propagateNavbarHeight() {
+        let height = document.getElementById("header").offsetHeight;
+        document.documentElement.style.setProperty(
+          "--scroll-offset",
+          height + "px"
+        );
+      }
+      window.addEventListener("resize", propagateNavbarHeight);
+      propagateNavbarHeight();
+    </script>
+  </body>
+</html>
