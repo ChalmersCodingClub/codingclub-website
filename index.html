@@ -3,32 +3,46 @@
   <head>
     <title>Chalmers Coding Club</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styling2.css?v=2026-09-02b" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styling2.css?v=2026-09-02f" />
     <link rel="canonical" href="https://chalmerscoding.club/" />
   </head>
   <body>
+    <!-- include:header -->
     <div id="header">
       <div class="aligned" id="header-inner">
         <div id="left">
-          <a href="#front-splash">
-            <img id="logo" src="logo.png" />
+          <a href="/">
+            <img id="logo" src="/logo.webp" alt="Chalmers Coding Club" />
           </a>
         </div>
 
         <div id="right">
-          <a class="nav" href="#section-about">Om oss</a>
-          <a class="nav" href="#section-tisdag">Tisdagsträffar</a>
-          <a class="nav" href="#section-chalmerschallenge"
+          <a class="nav" href="/index.html#section-about">Om oss</a>
+          <a class="nav" href="/index.html#section-tisdag">Tisdagsträffar</a>
+          <a class="nav" href="/index.html#section-chalmerschallenge"
             >Chalmers Challenge</a
           >
-          <a class="nav" href="#section-bootcamp">Boot Camp</a>
-          <a class="nav" href="#section-nwerc">NWERC</a>
-          <a class="nav" href="#section-events">Events</a>
-          <a class="nav" href="#section-sponsor">Sponsorer</a>
-          <a class="nav" href="#section-contact-info">Kontakt</a>
+          <a class="nav" href="/index.html#section-bootcamp">Boot Camp</a>
+          <a class="nav" href="/index.html#section-nwerc">Resor</a>
+          <a class="nav" href="/index.html#section-events">Events</a>
+          <a class="nav" href="/index.html#section-sponsor">Sponsorer</a>
+          <a class="nav" href="/index.html#section-contact-info">Kontakt</a>
         </div>
       </div>
     </div>
+    <script>
+      // Ankarlänkar ska hamna under den fasta headern, inte bakom den.
+      function propagateNavbarHeight() {
+        document.documentElement.style.setProperty(
+          "--scroll-offset",
+          document.getElementById("header").offsetHeight + "px"
+        );
+      }
+      window.addEventListener("resize", propagateNavbarHeight);
+      propagateNavbarHeight();
+    </script>
+    <!-- /include:header -->
 
     <main>
       <div id="front-splash"></div>
@@ -78,203 +92,101 @@
             <a href="/meetup"><b>Se schemat för tisdagsträffarna här</b></a>
           </p>
           <img
-            src="img/tisdag1.jpg"
-            width="500"
-          />
+            src="img/tisdag1.webp"
+            width="500" loading="lazy" />
         </div>
       </div>
 
       <div class="section shadowed" id="section-chalmerschallenge">
         <div class="aligned">
-          <h2 class="heading">CHALMERS CHALLENGE 2025</h2>
-          <img
-            src="img/chalmerschallenge2025.jpeg"
-            width="600"
-          /><br />
-          I år fick vi totalt in 960 inlämningar under tävlingen, rekord för Chalmers Challenge 😲
-          David Wärn, som har en andraplacering och en tredjeplacering i Chalmers Challenge sedan tidigare, knep i år förstaplatsen 🥇🥇
-          <br /><br />
-          <a
-            href="https://chalmerschallenge25.kattis.com/standings"
-            target="_blank"
-          >
-            Resultat </a>
-        </div>
-        <div class="aligned">
-          <h2 class="heading">CHALMERS CHALLENGE 2024</h2>
-          Simon Lindholm vinner Chalmers Challenge för andra gången, starkt jobbat!
-          <br /><br />
-          <a
-            href="https://chalmerschallenge24.kattis.com/standings"
-            target="_blank"
-          >
-            Resultat </a>
-        </div>
-        <div class="aligned">
-          <h2 class="heading">CHALMERS CHALLENGE 2023</h2>
-          Sex personer löste allt, wow! Mårten vann på tiebreak och var dessutom
-          först med att lösa tre av problemen &#128558;
-          <br /><br />
-          <a
-            href="https://chalmerschallenge23.kattis.com/standings"
-            target="_blank"
-          >
-            Resultat </a
-          ><br /><br />
-          Tack till TogetherTech och Omegapoint som sponsrade tävlingen!
-        </div>
-        <div class="aligned">
-          <h2 class="heading">CHALMERS CHALLENGE 2022</h2>
-          Fredrik vann, bra jobbat!
-          <br /><br />
-          <a
-            href="https://chalmerschallenge22.kattis.com/standings"
-            target="_blank"
-          >
-            Resultat
-          </a>
-        </div>
-        <div class="aligned">
-          <h2 class="heading">CHALMERS CHALLENGE 2021</h2>
-          Chalmers Challenge 2021 var en två timmar lång programmeringstävling
-          som anordnades av Chalmers Coding Club den 23 januari. Grattis till
-          Simon Lindholm som vann! Resultaten finns
-          <a
-            href="https://chalmerschallenge21.kattis.com/standings"
-            target="_blank"
-            >här</a
-          >. <br /><br />
-          Ses nästa år ;)
+          <h2 class="heading">CHALMERS CHALLENGE</h2>
+          <p>
+            Chalmers Challenge är en tävling i algoritmisk problemlösning.
+            Tävlingen har som avseende att vara intressant och utmanande för
+            både nybörjare och erfarna tävlare. Bästa chalmeristen koras
+            Chalmers mästare i programmering.
+          </p>
+          <p>
+            Tävlingen är även en del av serien
+            <a href="https://codingcup.se/" target="_blank"
+              >Swedish Coding Cup</a
+            >. Presterar man bra i flera av dessa deltävlingar blir man inbjuden
+            till sverigefinal.
+          </p>
+          <p>
+            <a href="/chalmerschallenge"
+              ><b>Läs om tidigare års tävlingar här</b></a
+            >
+          </p>
+          <img src="img/chalmerschallenge2025.webp" width="600" loading="lazy" />
         </div>
       </div>
 
       <div class="section" id="section-bootcamp">
         <div class="aligned" id="bootcamp25">
-          <br>
-          <h2 class="heading">Boot Camp 2025</h2>
-          <img
-            src="img/bootcamp2025.jpg"
-            width="550"
-          /><br />
-          Vår största boot camp hittills med både sportstugan och CS-bastun! Vi hade föreläsningar om bland annat binärsökning, dynamisk programmering, flow och talteori, varvat med roliga aktiviteter som estimathon, <a href="https://en.wikipedia.org/wiki/Go_(game)" target="_blank">Go</a>-morgon och bastubad. Tack till våra sponsorer Huawei och Jane Street som möjliggjorde lägret!
-        </div>
-        <div class="aligned">
-          <h2 class="heading">Boot Camp 2024</h2>
-          <img
-            src="img/bootcamp2024.jpg"
-            width="550"
-          /><br />
-          2-4 april 2024 i
-          <a
-            href="https://chalmersstudentkar.se/recreation-harryda/"
-            target="_blank"
-            >Recreation Härryda</a
-          > 🥳
-        </div>
-        <div class="aligned">
-          <h2 class="heading">Boot Camp 2023</h2>
-          <img
-            src="img/bootcamp2023.jpg"
-            alt="Lägerdeltagarna spelar data-codenames"
-            width="600"
-          /><br />
-          Boot Camp 2023 var 10-12 april i studentkårens
-          <a
-            href="https://chalmersstudentkar.se/recreation-harryda/"
-            target="_blank"
-            >Recreation Härryda</a
-          >. Tack till TogetherTech som sponsrade och bidrog med några roliga
-          uppgifter!
+          <h2 class="heading">CCC BOOT CAMP</h2>
+          <img src="img/bootcamp2025.webp" width="550" loading="lazy" />
+          <p>
+            Chalmers Coding Club håller årligen i en boot camp. Under denna
+            håller vi föreläsningar om algoritmer, spelar brädspel och har det
+            trevligt. Detta event brukar vara Chalmers Coding Clubs årliga
+            höjdpunkt, så se till att delta du med!
+          </p>
+          <p>
+            Alla är inbjudna att delta, oavsett om du pluggar grundskola,
+            universitet eller jobbar. Håll utkik i vår
+            <a href="https://discord.gg/PtsMAyXHxj" target="_blank">Discord</a>,
+            där vi annonserar när nästa boot camp sker.
+          </p>
+          <p>
+            <a href="/bootcamp"><b>Läs om tidigare års boot camps här</b></a>
+          </p>
         </div>
       </div>
 
       <div class="section shadowed" id="section-nwerc">
         <div class="aligned">
-          <h2 class="heading">EUC 2025</h2>
-          <img
-            src="img/euc2025.png"
-            alt="Storwerk i NWERC"
-            width="700"
-          /><br />
-          Aldrig har så mycket suttit på spel. Läs reseberättelsen <a href="euc25/main.html">här</a>!
+          <h2 class="heading">RESEBERÄTTELSER</h2>
+          <p>
+            Berättelser från när våra medlemmar åker på internationella
+            programmeringstävlingar.
+          </p>
+          <p>
+            <a href="/resor"><b>Läs alla reseberättelser här</b></a>
+          </p>
         </div>
         <div class="aligned">
-          <h2 class="heading">NWERC 2024</h2>
-          <img
-            src="img/nwerc2024.jpg"
-            alt="Storwerk i NWERC"
-            width="700"
-          /><br />
-          I år var Northwestern Europe Regional Contest (NWERC) återigen i Delft, Nederländerna. Läs reseberättelsen <a href="nwerc24.html">här</a>!
-        </div>
-        <div class="aligned">
-          <h2 class="heading">EUC 2024</h2>
-          <img
-            src="img/euc2024.jpg"
-            alt="Laget i Praget"
-            width="700"
-          /><br />
-          ICPC stiftelsen introducerade, i samband med en minskning i antalet 
-          kvalifikationer för världsfinalerna, en ny tävling i år. Allt roligt
-          som hände på resan kan du läsa i <a href="euc24/main.html">bloggen</a>!
-        </div>
-        <div class="aligned">
-          <h2 class="heading">NCPC 2023</h2>
-          <img
-            src="img/ncpc2023.jpg"
-            alt="Deltagarna tänker djupt"
-            width="800"
-          /><br />
-          237 lag från hela norden deltog, bland dem 7 lag från Chalmers. Mycket
-          bra resultat för Chalmers, bland annat både bästa och näst bästa
-          studentlag i Sverige. Fullständiga resultat
-          <a
-            href="https://ncpc23.kattis.com/contests/ncpc23/standings"
-            target="_blank"
-            >här</a
-          >.
-        </div>
-        <div class="aligned">
-          <h2 class="heading">NWERC 2022</h2>
-          Sju medlemmar åkte till Northwestern Europe Regional Contest (NWERC)
-          2022 i Delft i Nederländerna. Läs vår reseblogg
-          <a href="nwerc22.html">här</a>.
+          <h3 class="heading">EUC 2025</h3>
+          <img src="img/euc2025.webp" alt="Laget på EUC 2025" width="700" loading="lazy" />
+          <p>
+            Aldrig har så mycket suttit på spel. Läs reseberättelsen
+            <a href="euc25/main.html">här</a>!
+          </p>
         </div>
       </div>
 
       <div class="section" id="section-events">
         <div class="aligned">
-          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2025</h2>
-          Anton Älgmyr försvarade sin titel med mycket imponerande spel i årets golfmästerskap! ⛳
-          Han hittade kortaste vägen genom en labyrint med bara 160 slag 🤯
-        </div>
-        <div class="aligned">
-          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2024</h2>
-          Grattis till Chalmers nya golfmästare Anton Älgmyr! <br/>
-          Den här gången var uppgiften att beräkna A^k för matris A och litet heltal k.
-          Anton och övriga deltagare spelade detta hål med imponerande kreativitet och träffsäkerhet!
-        </div>
-        <div class="aligned">
-          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2023</h2>
-          Carl Sundvall vann 🎉 Årets uppgift var ungefär
-          <a
-            href="https://open.kattis.com/problems/mathhomework"
-            target="_blank"
-            >Math Homework</a
-          >. För andra året i rad räknade domaren bytes lite knasigt :)
-        </div>
-        <div class="aligned">
-          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2022</h2>
-          Årets uppgift var att multiplicera två polynom. Q blev ny golfmästare
-          genom att tänka utanför boxen och skriva en lösning som slog alla
-          andra med råge!
-        </div>
-        <div class="aligned">
-          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2021</h2>
-          Aprilskämtstävling, tävling i att code golfa kattis-problemet
-          <a href="https://open.kattis.com/problems/tri" target="_blank">Tri</a
-          >. Jonathan Lööv blev Chalmers Golfmästare med 113 <s>slag</s> bytes,
-          grattis!
+          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP</h2>
+          <p>
+            Den första april varje år håller Chalmers i en tävling i
+            <s>golf</s> kodgolf. Ett problem, 24h, kortast lösning vinner.
+          </p>
+          <p>
+            Vinnaren får titeln Golfmästare på Chalmers Coding Clubs Discord
+            tills nästa golftävling. Vill du tävla? Håll utkik i
+            <a href="https://discord.gg/PtsMAyXHxj" target="_blank">Discord</a>
+            1 april 00:00.
+          </p>
+          <p>
+            Vill du testa själv? Alla golfmästerskap går att spela i efterhand
+            <a href="https://judge.progolymp.se/archive/golf" target="_blank"
+              >här</a
+            >.
+          </p>
+          <p>
+            <a href="/golf"><b>Läs om tidigare års golfmästerskap här</b></a>
+          </p>
         </div>
       </div>
 
@@ -283,8 +195,8 @@
           <h2 class="heading">SPONSORER</h2>
           <br />
           <div class="sponsor-logos">
-            <img src="huawei.jpg" style="width: 30%;" />
-            <img src="janestreet.jpg" style="width: 45%;" />
+            <img src="huawei.webp" style="width: 30%;" loading="lazy" />
+            <img src="janestreet.webp" style="width: 45%;" loading="lazy" />
           </div>
         </div>
         <style>
@@ -373,16 +285,5 @@
         </div>
       </div>
     </main>
-    <script>
-      function propagateNavbarHeight() {
-        let height = document.getElementById("header").offsetHeight;
-        document.documentElement.style.setProperty(
-          "--scroll-offset",
-          height + "px"
-        );
-      }
-      window.addEventListener("resize", propagateNavbarHeight);
-      propagateNavbarHeight();
-    </script>
   </body>
 </html>

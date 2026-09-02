@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <title>Chalmers Golfmästerskap – Chalmers Coding Club</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styling2.css?v=2026-09-02f" />
+    <link rel="canonical" href="https://chalmerscoding.club/golf" />
+    <style>
+      .page-hero {
+        background: var(--c-golf);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- include:header -->
+    <div id="header">
+      <div class="aligned" id="header-inner">
+        <div id="left">
+          <a href="/">
+            <img id="logo" src="/logo.webp" alt="Chalmers Coding Club" />
+          </a>
+        </div>
+
+        <div id="right">
+          <a class="nav" href="/index.html#section-about">Om oss</a>
+          <a class="nav" href="/index.html#section-tisdag">Tisdagsträffar</a>
+          <a class="nav" href="/index.html#section-chalmerschallenge"
+            >Chalmers Challenge</a
+          >
+          <a class="nav" href="/index.html#section-bootcamp">Boot Camp</a>
+          <a class="nav" href="/index.html#section-nwerc">Resor</a>
+          <a class="nav" href="/index.html#section-events">Events</a>
+          <a class="nav" href="/index.html#section-sponsor">Sponsorer</a>
+          <a class="nav" href="/index.html#section-contact-info">Kontakt</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Ankarlänkar ska hamna under den fasta headern, inte bakom den.
+      function propagateNavbarHeight() {
+        document.documentElement.style.setProperty(
+          "--scroll-offset",
+          document.getElementById("header").offsetHeight + "px"
+        );
+      }
+      window.addEventListener("resize", propagateNavbarHeight);
+      propagateNavbarHeight();
+    </script>
+    <!-- /include:header -->
+
+    <main>
+      <div class="page-hero">
+        <div class="aligned">
+          <h1 class="heading">CHALMERS GOLFMÄSTERSKAP</h1>
+          <p>
+            Den första april varje år håller Chalmers i en tävling i
+            <s>golf</s> kodgolf. Ett problem, 24h, kortast lösning vinner.
+          </p>
+          <p>
+            Vinnaren får titeln Golfmästare på Chalmers Coding Clubs Discord
+            tills nästa golftävling. Vill du tävla? Håll utkik i
+            <a href="https://discord.gg/PtsMAyXHxj" target="_blank">Discord</a>
+            1 april 00:00.
+          </p>
+          <p>
+            Vill du testa själv? Alla golfmästerskap går att spela i efterhand
+            <a href="https://judge.progolymp.se/archive/golf" target="_blank"
+              >här</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <div class="page-main">
+        <article class="aligned" id="golf2026">
+          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2026</h2>
+          <p>
+            Carl Sundvall slog långt under par – han hittade cykellängder i en
+            funktionell graf i endast 89 bytes, hela 15 mindre än näst kortaste!
+            ⛳
+          </p>
+        </article>
+
+        <article class="aligned" id="golf2025">
+          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2025</h2>
+          <p>
+            Anton Älgmyr försvarade sin titel med mycket imponerande spel i
+            årets golfmästerskap! ⛳ Han hittade kortaste vägen genom en labyrint
+            med bara 160 slag 🤯
+          </p>
+        </article>
+
+        <article class="aligned" id="golf2024">
+          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2024</h2>
+          <p>Grattis till Chalmers nya golfmästare Anton Älgmyr!</p>
+          <p>
+            Den här gången var uppgiften att beräkna A^k för matris A och litet
+            heltal k. Anton och övriga deltagare spelade detta hål med
+            imponerande kreativitet och träffsäkerhet!
+          </p>
+        </article>
+
+        <article class="aligned" id="golf2023">
+          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2023</h2>
+          <p>
+            Carl Sundvall vann 🎉 Årets uppgift var ungefär
+            <a href="https://open.kattis.com/problems/mathhomework" target="_blank"
+              >Math Homework</a
+            >. För andra året i rad räknade domaren bytes lite knasigt :)
+          </p>
+        </article>
+
+        <article class="aligned" id="golf2022">
+          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2022</h2>
+          <p>
+            Årets uppgift var att multiplicera två polynom. Q blev ny
+            golfmästare genom att tänka utanför boxen och skriva en lösning som
+            slog alla andra med råge!
+          </p>
+        </article>
+
+        <article class="aligned" id="golf2021">
+          <h2 class="heading">CHALMERS GOLFMÄSTERSKAP 2021</h2>
+          <p>
+            Aprilskämtstävling, tävling i att code golfa kattis-problemet
+            <a href="https://open.kattis.com/problems/tri" target="_blank">Tri</a
+            >. Jonathan Lööv blev Chalmers Golfmästare med 113 <s>slag</s>
+            bytes, grattis!
+          </p>
+        </article>
+
+        <div class="page-back">
+          <a href="../index.html">&#8592; Tillbaka till startsidan</a>
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>

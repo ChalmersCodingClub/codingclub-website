@@ -2,6 +2,9 @@
 
 set -eo pipefail
 
+echo '# Building pages from partials/ (see CLAUDE.md)'
+python3 build.py
+
 echo '# Running pre-commit prettier autoformatting'
 
 if nix run --help &> /dev/null; then

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <title>Chalmers Challenge – Chalmers Coding Club</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styling2.css?v=2026-09-02f" />
+    <link rel="canonical" href="https://chalmerscoding.club/chalmerschallenge" />
+    <style>
+      .page-hero {
+        background: var(--c-cc);
+        color: #ffffff;
+        --link: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- include:header -->
+    <div id="header">
+      <div class="aligned" id="header-inner">
+        <div id="left">
+          <a href="/">
+            <img id="logo" src="/logo.webp" alt="Chalmers Coding Club" />
+          </a>
+        </div>
+
+        <div id="right">
+          <a class="nav" href="/index.html#section-about">Om oss</a>
+          <a class="nav" href="/index.html#section-tisdag">Tisdagsträffar</a>
+          <a class="nav" href="/index.html#section-chalmerschallenge"
+            >Chalmers Challenge</a
+          >
+          <a class="nav" href="/index.html#section-bootcamp">Boot Camp</a>
+          <a class="nav" href="/index.html#section-nwerc">Resor</a>
+          <a class="nav" href="/index.html#section-events">Events</a>
+          <a class="nav" href="/index.html#section-sponsor">Sponsorer</a>
+          <a class="nav" href="/index.html#section-contact-info">Kontakt</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Ankarlänkar ska hamna under den fasta headern, inte bakom den.
+      function propagateNavbarHeight() {
+        document.documentElement.style.setProperty(
+          "--scroll-offset",
+          document.getElementById("header").offsetHeight + "px"
+        );
+      }
+      window.addEventListener("resize", propagateNavbarHeight);
+      propagateNavbarHeight();
+    </script>
+    <!-- /include:header -->
+
+    <main>
+      <div class="page-hero">
+        <div class="aligned">
+          <h1 class="heading">CHALMERS CHALLENGE</h1>
+          <p>
+            Chalmers Challenge är en tävling i algoritmisk problemlösning.
+            Tävlingen har som avseende att vara intressant och utmanande för
+            både nybörjare och erfarna tävlare. Bästa chalmeristen koras
+            Chalmers mästare i programmering.
+          </p>
+          <p>
+            Tävlingen är även en del av serien
+            <a href="https://codingcup.se/" target="_blank"
+              >Swedish Coding Cup</a
+            >. Presterar man bra i flera av dessa deltävlingar blir man inbjuden
+            till sverigefinal.
+          </p>
+        </div>
+      </div>
+
+      <div class="page-main">
+        <article class="aligned" id="cc2026">
+          <h2 class="heading">CHALMERS CHALLENGE 2026</h2>
+          <p>
+            I år deltog singaporeanen Jeremy som lyckades slå alla svenskar. På
+            andra plats kom Wietze Koops från Lunds universitet.
+          </p>
+          <p>
+            De sista två problemen verkar ha varit väldigt utmanande. Om du
+            vill testlösa dem kan du göra det
+            <a
+              href="https://open.kattis.com/problem-sources/Chalmers%20Challenge%202026"
+              target="_blank"
+              >här</a
+            >. Lösningsförslag hittas
+            <a
+              href="https://github.com/Matistjati/Coding-Cup-Editorials/blob/master/editions/2026/chalmers-2026.pdf"
+              target="_blank"
+              >här</a
+            >.
+          </p>
+          <p>
+            <a
+              href="https://chalmerschallenge26.kattis.com/contests/chalmerschallenge26/standings"
+              target="_blank"
+              >Resultat</a
+            >
+          </p>
+        </article>
+
+        <article class="aligned" id="cc2025">
+          <h2 class="heading">CHALMERS CHALLENGE 2025</h2>
+          <img src="../img/chalmerschallenge2025.webp" width="600" loading="lazy" />
+          <p>
+            I år fick vi totalt in 960 inlämningar under tävlingen, rekord för
+            Chalmers Challenge 😲 David Wärn, som har en andraplacering och en
+            tredjeplacering i Chalmers Challenge sedan tidigare, knep i år
+            förstaplatsen 🥇🥇
+          </p>
+          <p>
+            <a href="https://chalmerschallenge25.kattis.com/standings" target="_blank"
+              >Resultat</a
+            >
+          </p>
+        </article>
+
+        <article class="aligned" id="cc2024">
+          <h2 class="heading">CHALMERS CHALLENGE 2024</h2>
+          <p>
+            Simon Lindholm vinner Chalmers Challenge för andra gången, starkt
+            jobbat!
+          </p>
+          <p>
+            <a href="https://chalmerschallenge24.kattis.com/standings" target="_blank"
+              >Resultat</a
+            >
+          </p>
+        </article>
+
+        <article class="aligned" id="cc2023">
+          <h2 class="heading">CHALMERS CHALLENGE 2023</h2>
+          <p>
+            Sex personer löste allt, wow! Mårten vann på tiebreak och var
+            dessutom först med att lösa tre av problemen &#128558;
+          </p>
+          <p>
+            <a href="https://chalmerschallenge23.kattis.com/standings" target="_blank"
+              >Resultat</a
+            >
+          </p>
+          <p>Tack till TogetherTech och Omegapoint som sponsrade tävlingen!</p>
+        </article>
+
+        <article class="aligned" id="cc2022">
+          <h2 class="heading">CHALMERS CHALLENGE 2022</h2>
+          <p>Fredrik vann, bra jobbat!</p>
+          <p>
+            <a href="https://chalmerschallenge22.kattis.com/standings" target="_blank"
+              >Resultat</a
+            >
+          </p>
+        </article>
+
+        <article class="aligned" id="cc2021">
+          <h2 class="heading">CHALMERS CHALLENGE 2021</h2>
+          <p>
+            Chalmers Challenge 2021 var en två timmar lång programmeringstävling
+            som anordnades av Chalmers Coding Club den 23 januari. Grattis till
+            Simon Lindholm som vann!
+          </p>
+          <p>
+            <a href="https://chalmerschallenge21.kattis.com/standings" target="_blank"
+              >Resultat</a
+            >
+          </p>
+          <p>Ses nästa år ;)</p>
+        </article>
+
+        <div class="page-back">
+          <a href="../index.html">&#8592; Tillbaka till startsidan</a>
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>

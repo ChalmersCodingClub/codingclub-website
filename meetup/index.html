@@ -4,31 +4,15 @@
     <title>Tisdagsträffar – Chalmers Coding Club</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../styling2.css?v=2026-09-02b" />
+    <link rel="stylesheet" href="../styling2.css?v=2026-09-02f" />
     <link rel="canonical" href="https://chalmerscoding.club/meetup" />
     <style>
-      #tisdag-hero {
-        background: #d8d64d;
-        padding: 48px 0 56px;
-        text-align: center;
-        box-shadow: inset 0px -11px 16px -10px rgb(0, 0, 0, 0.5);
-      }
-
-      #tisdag-hero h1 {
-        margin: 0 0 0.4em;
-        letter-spacing: 2px;
-      }
-
-      #tisdag-hero p {
-        margin: 0.4em 0;
-      }
-
-      #tisdag-hero a {
-        color: #2f5f92;
+      .page-hero {
+        background: var(--c-tisdag);
       }
 
       #tisdag-main {
-        padding: 48px 0 80px;
+        text-align: left;
       }
 
       /* Kortet som schemat ligger i, så det inte ser ut som ett kalkylblad
@@ -43,24 +27,14 @@
       }
 
       .schema-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 12px;
         padding: 14px 20px;
-        background: #d8d64d;
+        background: var(--c-tisdag);
         border-bottom: 1px solid rgba(0, 0, 0, 0.15);
         font-size: 0.9em;
       }
 
       .schema-card-header b {
         letter-spacing: 1px;
-      }
-
-      .schema-card-header a {
-        color: #2f5f92;
-        font-size: 0.8em;
-        white-space: nowrap;
       }
 
       /* Schemat hämtas som CSV från det publicerade arket och ritas som en
@@ -146,25 +120,13 @@
       }
 
       #current-week-nr {
-        background: #d8d64d;
+        background: var(--c-tisdag);
         border-radius: 6px;
         padding: 2px 10px;
         font-weight: bold;
       }
 
       @media only screen and (max-width: 700px) {
-        #tisdag-hero {
-          padding: 32px 0 40px;
-        }
-
-        #tisdag-hero h1 {
-          font-size: clamp(26px, 7.5vw, 46px);
-        }
-
-        #tisdag-main {
-          padding: 32px 0 60px;
-        }
-
         #current-week {
           font-size: 1.35em;
         }
@@ -200,38 +162,47 @@
         }
       }
 
-      #tisdag-back {
-        text-align: center;
-        margin-top: 40px;
-      }
     </style>
   </head>
   <body>
+    <!-- include:header -->
     <div id="header">
       <div class="aligned" id="header-inner">
         <div id="left">
-          <a href="../index.html">
-            <img id="logo" src="../logo.png" />
+          <a href="/">
+            <img id="logo" src="/logo.webp" alt="Chalmers Coding Club" />
           </a>
         </div>
 
         <div id="right">
-          <a class="nav" href="../index.html#section-about">Om oss</a>
-          <a class="nav" href="../index.html#section-tisdag">Tisdagsträffar</a>
-          <a class="nav" href="../index.html#section-chalmerschallenge"
+          <a class="nav" href="/index.html#section-about">Om oss</a>
+          <a class="nav" href="/index.html#section-tisdag">Tisdagsträffar</a>
+          <a class="nav" href="/index.html#section-chalmerschallenge"
             >Chalmers Challenge</a
           >
-          <a class="nav" href="../index.html#section-bootcamp">Boot Camp</a>
-          <a class="nav" href="../index.html#section-nwerc">NWERC</a>
-          <a class="nav" href="../index.html#section-events">Events</a>
-          <a class="nav" href="../index.html#section-sponsor">Sponsorer</a>
-          <a class="nav" href="../index.html#section-contact-info">Kontakt</a>
+          <a class="nav" href="/index.html#section-bootcamp">Boot Camp</a>
+          <a class="nav" href="/index.html#section-nwerc">Resor</a>
+          <a class="nav" href="/index.html#section-events">Events</a>
+          <a class="nav" href="/index.html#section-sponsor">Sponsorer</a>
+          <a class="nav" href="/index.html#section-contact-info">Kontakt</a>
         </div>
       </div>
     </div>
+    <script>
+      // Ankarlänkar ska hamna under den fasta headern, inte bakom den.
+      function propagateNavbarHeight() {
+        document.documentElement.style.setProperty(
+          "--scroll-offset",
+          document.getElementById("header").offsetHeight + "px"
+        );
+      }
+      window.addEventListener("resize", propagateNavbarHeight);
+      propagateNavbarHeight();
+    </script>
+    <!-- /include:header -->
 
     <main>
-      <div id="tisdag-hero">
+      <div class="page-hero">
         <div class="aligned">
           <h1 class="heading">TISDAGSTRÄFFAR</h1>
           <p>
@@ -247,7 +218,7 @@
         </div>
       </div>
 
-      <div id="tisdag-main">
+      <div class="page-main" id="tisdag-main">
         <div class="aligned">
           <p id="current-week" hidden>
             Denna vecka: <span id="current-week-nr"></span>
@@ -256,11 +227,6 @@
           <div class="schema-card">
             <div class="schema-card-header">
               <b>SCHEMA</b>
-              <a
-                href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDjkbBupYAg4ObceFJJsP90tFQVqKk4oulfVBMA_NFM0fo8ssQRKqqzLZ6pQnCfz032T7smgDFipGx/pubhtml?gid=1392261903&amp;single=true"
-                target="_blank"
-                >Öppna som kalkylark</a
-              >
             </div>
 
             <p id="schema-status" class="schema-status">Hämtar schemat…</p>
@@ -278,7 +244,7 @@
             </div>
           </div>
 
-          <div id="tisdag-back">
+          <div class="page-back">
             <a href="../index.html">&#8592; Tillbaka till startsidan</a>
           </div>
         </div>
@@ -437,15 +403,6 @@
       }
       loadSchema();
 
-      function propagateNavbarHeight() {
-        let height = document.getElementById("header").offsetHeight;
-        document.documentElement.style.setProperty(
-          "--scroll-offset",
-          height + "px"
-        );
-      }
-      window.addEventListener("resize", propagateNavbarHeight);
-      propagateNavbarHeight();
     </script>
   </body>
 </html>

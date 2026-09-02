@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <title>CCC Boot Camp – Chalmers Coding Club</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styling2.css?v=2026-09-02f" />
+    <link rel="canonical" href="https://chalmerscoding.club/bootcamp" />
+    <style>
+      .page-hero {
+        background: var(--c-bootcamp);
+        --link: #0a2040;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- include:header -->
+    <div id="header">
+      <div class="aligned" id="header-inner">
+        <div id="left">
+          <a href="/">
+            <img id="logo" src="/logo.webp" alt="Chalmers Coding Club" />
+          </a>
+        </div>
+
+        <div id="right">
+          <a class="nav" href="/index.html#section-about">Om oss</a>
+          <a class="nav" href="/index.html#section-tisdag">Tisdagsträffar</a>
+          <a class="nav" href="/index.html#section-chalmerschallenge"
+            >Chalmers Challenge</a
+          >
+          <a class="nav" href="/index.html#section-bootcamp">Boot Camp</a>
+          <a class="nav" href="/index.html#section-nwerc">Resor</a>
+          <a class="nav" href="/index.html#section-events">Events</a>
+          <a class="nav" href="/index.html#section-sponsor">Sponsorer</a>
+          <a class="nav" href="/index.html#section-contact-info">Kontakt</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Ankarlänkar ska hamna under den fasta headern, inte bakom den.
+      function propagateNavbarHeight() {
+        document.documentElement.style.setProperty(
+          "--scroll-offset",
+          document.getElementById("header").offsetHeight + "px"
+        );
+      }
+      window.addEventListener("resize", propagateNavbarHeight);
+      propagateNavbarHeight();
+    </script>
+    <!-- /include:header -->
+
+    <main>
+      <div class="page-hero">
+        <div class="aligned">
+          <h1 class="heading">CCC BOOT CAMP</h1>
+          <p>
+            Chalmers Coding Club håller årligen i en boot camp. Under denna
+            håller vi föreläsningar om algoritmer, spelar brädspel och har det
+            trevligt. Detta event brukar vara Chalmers Coding Clubs årliga
+            höjdpunkt, så se till att delta du med!
+          </p>
+          <p>
+            Alla är inbjudna att delta, oavsett om du pluggar grundskola,
+            universitet eller jobbar. Håll utkik i vår
+            <a href="https://discord.gg/PtsMAyXHxj" target="_blank">Discord</a>,
+            där vi annonserar när nästa boot camp sker.
+          </p>
+        </div>
+      </div>
+
+      <div class="page-main">
+        <article class="aligned" id="bootcamp26">
+          <h2 class="heading">BOOT CAMP 2026</h2>
+          <img src="../img/bootcamp2026.webp" width="550" loading="lazy" />
+          <p>
+            I år tog vi paus från traditionen att vara i Härryda och var i
+            stället i Askim Sjöscoutkårs scoutstuga.
+          </p>
+          <p>
+            Som vanligt höll vi föreläsningar, badade och spelade brädspel. På
+            plats skrev vi tävlingen KTH Challenge, där topp 2 var på plats och
+            tredjeplatsen var en chalmerist på distans 💪
+          </p>
+          <p>
+            <a
+              href="https://kthchallenge26.kattis.com/contests/kthchallenge26/standings"
+              target="_blank"
+              >Resultatlista</a
+            >
+          </p>
+        </article>
+
+        <article class="aligned" id="bootcamp25">
+          <h2 class="heading">BOOT CAMP 2025</h2>
+          <img src="../img/bootcamp2025.webp" width="550" loading="lazy" />
+          <p>
+            Vår största boot camp hittills med både sportstugan och CS-bastun!
+            Vi hade föreläsningar om bland annat binärsökning, dynamisk
+            programmering, flow och talteori, varvat med roliga aktiviteter som
+            estimathon,
+            <a href="https://en.wikipedia.org/wiki/Go_(game)" target="_blank"
+              >Go</a
+            >-morgon och bastubad. Tack till våra sponsorer Huawei och Jane
+            Street som möjliggjorde lägret!
+          </p>
+        </article>
+
+        <article class="aligned" id="bootcamp24">
+          <h2 class="heading">BOOT CAMP 2024</h2>
+          <img src="../img/bootcamp2024.webp" width="550" loading="lazy" />
+          <p>
+            2–4 april 2024 i
+            <a
+              href="https://chalmersstudentkar.se/recreation-harryda/"
+              target="_blank"
+              >Recreation Härryda</a
+            >
+            🥳
+          </p>
+        </article>
+
+        <article class="aligned" id="bootcamp23">
+          <h2 class="heading">BOOT CAMP 2023</h2>
+          <img
+            src="../img/bootcamp2023.webp"
+            alt="Lägerdeltagarna spelar data-codenames"
+            width="600" loading="lazy" />
+          <p>
+            Boot Camp 2023 var 10–12 april i studentkårens
+            <a
+              href="https://chalmersstudentkar.se/recreation-harryda/"
+              target="_blank"
+              >Recreation Härryda</a
+            >. Tack till TogetherTech som sponsrade och bidrog med några roliga
+            uppgifter!
+          </p>
+        </article>
+
+        <div class="page-back">
+          <a href="../index.html">&#8592; Tillbaka till startsidan</a>
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>

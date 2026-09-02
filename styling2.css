@@ -8,8 +8,32 @@ h1 {
 h2 {
   font-size: 40px;
 }
+
+h3 {
+  font-size: 30px;
+}
+/* Länkfärgen sätts per sektion så att den alltid har tillräcklig kontrast
+   (WCAG AA, minst 4.5:1) mot bakgrunden. Standard: mörkblå på ljus bakgrund. */
+:root {
+  --link: #1a447c;
+
+  /* Färgpaletten. Undersidornas heros använder samma variabler som
+     startsidans sektioner, så en färg ändras på ett ställe. */
+  --bg: #eeeefe;
+  --c-head: #5799d8;
+  --c-about: #9c6420; /* mörkare än förr (#b47726) så att vit text når 4.5:1 */
+  --c-tisdag: #d8d64d;
+  --c-cc: #29703c;
+  --c-bootcamp: #b77ab9;
+  --c-resor: #707070; /* mörkare än förr (#888888) av samma skäl */
+  --c-golf: #f8b677;
+  --c-sponsor: #ffffff;
+  --c-contact: #eba8c7;
+  --c-resources: #222222;
+}
+
 a {
-  color: #5799d8;
+  color: var(--link);
 }
 
 @media only screen and not (max-width: 1000px) {
@@ -31,6 +55,13 @@ a {
   }
 }
 
+/* 40px monospace versaler får inte plats på en rad på en mobilskärm. */
+@media only screen and (max-width: 700px) {
+  h2 {
+    font-size: clamp(24px, 7vw, 40px);
+  }
+}
+
 .sponsortext {
   font-size: 18px;
 }
@@ -44,7 +75,7 @@ a {
 body {
   font-size: 20px;
 
-  background: #eeeefe;
+  background: var(--bg);
   margin: 0;
   font-family: monospace;
 }
@@ -101,7 +132,7 @@ body {
 }
 
 .nav:hover {
-  background: #5799d8;
+  background: var(--c-head);
   border-radius: 5px;
   color: black;
 }
@@ -150,10 +181,72 @@ body {
   text-align: center;
 }
 
+/* Bilder med width-attribut (t.ex. 600) ska krympa på smala skärmar. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Undersidor (/meetup, /chalmerschallenge): en färgad hero överst och
+   artiklar i "aligned"-block under, i samma stil som startsidans sektioner. */
+.page-hero {
+  padding: 48px 0 56px;
+  text-align: center;
+  box-shadow: inset 0px -11px 16px -10px rgb(0, 0, 0, 0.5);
+}
+
+.page-hero h1 {
+  margin: 0 0 0.4em;
+  letter-spacing: 2px;
+}
+
+.page-hero p {
+  margin: 0.4em 0;
+}
+
+.page-main {
+  padding: 48px 0 80px;
+  text-align: center;
+}
+
+.page-main article {
+  padding-bottom: 40px;
+}
+
+.page-main article + article {
+  padding-top: 40px;
+  border-top: 1px solid #c9c9dc;
+}
+
+.page-main article h2 {
+  margin-top: 0;
+}
+
+.page-back {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 700px) {
+  .page-hero {
+    padding: 32px 0 40px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(26px, 7.5vw, 46px);
+  }
+
+  .page-main {
+    padding: 32px 0 60px;
+  }
+}
+
 .shadowed {
   box-shadow: inset 0px 11px 16px -10px rgb(0, 0, 0, 0.5),
     inset 0px -11px 16px -10px rgb(0, 0, 0, 0.5);
   color: #ffffff;
+  /* Vit text kräver vita länkar; understrykningen skiljer dem från texten. */
+  --link: #ffffff;
 }
 
 :root {
@@ -167,47 +260,50 @@ body {
 }
 
 #section-head {
-  background: #5799d8;
+  background: var(--c-head);
 }
 
 #section-about {
-  background: #b47726;
+  background: var(--c-about);
 }
 
 #section-tisdag {
-  background: #d8d64d;
+  background: var(--c-tisdag);
 }
 
 #section-events {
-  background: #f8b677;
+  background: var(--c-golf);
 }
 
 #section-chalmerschallenge {
-  background: #29703c;
+  background: var(--c-cc);
 }
 
 #section-bootcamp {
-  background: #b77ab9;
+  background: var(--c-bootcamp);
+  /* Lila är en mellanton: varken vitt eller vanlig blå räcker, men mörk
+     marinblå gör det. */
+  --link: #0a2040;
 }
 
 #section-nwerc {
-  background: #888888;
+  background: var(--c-resor);
 }
 
 #section-sponsor {
-  background: #ffffff;
+  background: var(--c-sponsor);
 }
 
 #section-contact-info {
-  background: #eba8c7;
+  background: var(--c-contact);
 }
 
 #section-resources {
-  background: #222222;
+  background: var(--c-resources);
 }
 
 #resources {
-  border-left: 10px solid #5799d8;
+  border-left: 10px solid var(--c-head);
 }
 
 #contact {
@@ -229,5 +325,6 @@ li {
 }
 .discord {
   font-style: italic;
-  color: #8d3a61;
+  /* Mörkare än förr (#8d3a61) för kontrast mot den rosa kontaktsektionen. */
+  color: #702c4d;
 }
