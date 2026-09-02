@@ -78,12 +78,12 @@ body {
 #right {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  /*overflow-x: scroll;*/
+  justify-content: center;
+  /* Utan wrap tvingar de åtta länkarna fram en ~660px bred layout på mobil. */
+  flex-wrap: wrap;
 }
 .nav {
   display: block;
-  height: 100%;
   box-sizing: border-box;
 
   padding-top: 20px;
@@ -104,6 +104,44 @@ body {
   background: #5799d8;
   border-radius: 5px;
   color: black;
+}
+
+/* De åtta navlänkarna radbryts så fort fönstret är smalare än ~1000px, och
+   headern blir snabbt hög nog att äta halva skärmen. Krymp den stegvis. */
+@media only screen and (max-width: 1000px) {
+  #logo {
+    height: 56px;
+  }
+
+  .nav {
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom-width: 10px;
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #header {
+    /* En radbruten header tar för mycket av en mobilskärm för att ligga kvar. */
+    position: static;
+  }
+
+  /* 60px per sida äter en tredjedel av en mobilskärm. */
+  .aligned {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  #logo {
+    height: 44px;
+  }
+
+  .nav {
+    padding-top: 6px;
+    border-bottom-width: 6px;
+  }
 }
 
 .section {

@@ -4,7 +4,7 @@
     <title>Tisdagsträffar – Chalmers Coding Club</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../styling2.css?v=2026-09-02" />
+    <link rel="stylesheet" href="../styling2.css?v=2026-09-02b" />
     <link rel="canonical" href="https://chalmerscoding.club/meetup" />
     <style>
       #tisdag-hero {
@@ -31,7 +31,7 @@
         padding: 48px 0 80px;
       }
 
-      /* Kortet som Google-arket ligger i, så det inte ser ut som ett kalkylblad
+      /* Kortet som schemat ligger i, så det inte ser ut som ett kalkylblad
          inklistrat mitt på sidan. */
       .schema-card {
         max-width: 900px;
@@ -43,10 +43,13 @@
       }
 
       .schema-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
         padding: 14px 20px;
         background: #d8d64d;
         border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-
         font-size: 0.9em;
       }
 
@@ -54,21 +57,86 @@
         letter-spacing: 1px;
       }
 
-      /* Arket är cross-origin, så varken kolumnbredder eller gridlinjer går att
-         styla härifrån. Tabellen är ~690px bred oavsett hur brett kortet är, så
-         vi skalar hela iframen till kortets bredd i stället (se fitSchema).
-         Ramen klipper det som hamnar utanför medan skalningen räknas ut. */
+      .schema-card-header a {
+        color: #2f5f92;
+        font-size: 0.8em;
+        white-space: nowrap;
+      }
+
+      /* Schemat hämtas som CSV från det publicerade arket och ritas som en
+         vanlig tabell. Då radbryts texten på mobil i stället för att klippas,
+         och vi kan markera veckan som är nu. */
+      .schema-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.8em;
+      }
+
+      .schema-table th,
+      .schema-table td {
+        padding: 8px 12px;
+        text-align: left;
+        vertical-align: top;
+        border-top: 1px solid #e6e6e6;
+      }
+
+      .schema-table th {
+        border-top: none;
+        background: #f4f4f4;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .schema-table td:first-child {
+        white-space: nowrap;
+        font-weight: bold;
+      }
+
+      .schema-table td:nth-child(2) {
+        color: #666666;
+      }
+
+      .schema-table tr.no-meetup td:last-child {
+        color: #999999;
+        font-style: italic;
+      }
+
+      .schema-table tr.current td {
+        background: #f3f2b8;
+      }
+
+      .schema-table tr.current td:first-child {
+        box-shadow: inset 5px 0 0 #b3b02b;
+      }
+
+      .schema-status {
+        padding: 20px;
+        font-size: 0.85em;
+        color: #666666;
+      }
+
+      /* Reservlösning om CSV-hämtningen misslyckas: bädda in arket som förr.
+         Det är cross-origin, så tabellen är ~680px bred oavsett kortets bredd
+         och skalas därför till kortet (se fitSchema). */
       .schema-frame {
-        overflow: hidden;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .schema-inner {
+        position: relative;
       }
 
       #tisdag-schema {
         display: block;
-        width: 700px;
+        width: 680px;
         height: 890px;
         border: none;
         background: #ffffff;
         transform-origin: top left;
+        pointer-events: none;
       }
 
       #current-week {
@@ -82,6 +150,54 @@
         border-radius: 6px;
         padding: 2px 10px;
         font-weight: bold;
+      }
+
+      @media only screen and (max-width: 700px) {
+        #tisdag-hero {
+          padding: 32px 0 40px;
+        }
+
+        #tisdag-hero h1 {
+          font-size: clamp(26px, 7.5vw, 46px);
+        }
+
+        #tisdag-main {
+          padding: 32px 0 60px;
+        }
+
+        #current-week {
+          font-size: 1.35em;
+        }
+
+        .schema-card {
+          border-radius: 8px;
+        }
+
+        .schema-card-header {
+          padding: 12px 14px;
+        }
+
+        .schema-table {
+          font-size: 0.75em;
+        }
+
+        .schema-table th,
+        .schema-table td {
+          padding: 7px 8px;
+        }
+
+        /* Temat är det man vill läsa; låt inte perioden ta halva bredden. */
+        .schema-table {
+          table-layout: fixed;
+        }
+
+        .schema-table th:nth-child(1) {
+          width: 3.4em;
+        }
+
+        .schema-table th:nth-child(2) {
+          width: 27%;
+        }
       }
 
       #tisdag-back {
@@ -140,14 +256,25 @@
           <div class="schema-card">
             <div class="schema-card-header">
               <b>SCHEMA</b>
+              <a
+                href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDjkbBupYAg4ObceFJJsP90tFQVqKk4oulfVBMA_NFM0fo8ssQRKqqzLZ6pQnCfz032T7smgDFipGx/pubhtml?gid=1392261903&amp;single=true"
+                target="_blank"
+                >Öppna som kalkylark</a
+              >
             </div>
-            <div class="schema-frame">
-              <iframe
-                id="tisdag-schema"
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDjkbBupYAg4ObceFJJsP90tFQVqKk4oulfVBMA_NFM0fo8ssQRKqqzLZ6pQnCfz032T7smgDFipGx/pubhtml?gid=1392261903&amp;single=true&amp;widget=false&amp;chrome=false&amp;headers=false&amp;range=A1:C43"
-                title="Schema för tisdagsträffarna"
-                loading="lazy"
-              ></iframe>
+
+            <p id="schema-status" class="schema-status">Hämtar schemat…</p>
+
+            <table id="schema-table" class="schema-table" hidden></table>
+
+            <div class="schema-frame" hidden>
+              <div class="schema-inner">
+                <iframe
+                  id="tisdag-schema"
+                  data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDjkbBupYAg4ObceFJJsP90tFQVqKk4oulfVBMA_NFM0fo8ssQRKqqzLZ6pQnCfz032T7smgDFipGx/pubhtml?gid=1392261903&amp;single=true&amp;widget=false&amp;chrome=false&amp;headers=false&amp;range=A1:C43"
+                  title="Schema för tisdagsträffarna"
+                ></iframe>
+              </div>
             </div>
           </div>
 
@@ -177,11 +304,13 @@
         return 1 + Math.round((d - jan4) / 604800000);
       }
 
+      let currentWeek = null;
       function showCurrentWeek() {
         const row = document.getElementById("current-week");
         try {
+          currentWeek = stockholmWeek(new Date());
           document.getElementById("current-week-nr").textContent =
-            "v. " + stockholmWeek(new Date());
+            "v. " + currentWeek;
           row.hidden = false;
         } catch (e) {
           // Hellre ingen rad alls än ett trasigt veckonummer.
@@ -190,21 +319,123 @@
       }
       showCurrentWeek();
 
-      // Arkets naturliga storlek: 3 kolumner (57+177+442px) + ramar och
-      // body-marginal, samt 43 rader à 20px. Skalas till kortets bredd så det
-      // varken blir tomrum till höger eller sidscroll på mobil.
-      const SCHEMA_W = 700;
+      // Samma publicerade ark som iframen, fast som CSV. Google skickar
+      // Access-Control-Allow-Origin: * på det, så det går att hämta härifrån.
+      const SCHEMA_CSV =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDjkbBupYAg4ObceFJJsP90tFQVqKk4oulfVBMA_NFM0fo8ssQRKqqzLZ6pQnCfz032T7smgDFipGx/pub?gid=1392261903&single=true&output=csv";
+
+      // Minimal RFC 4180-parser: citattecken, "" inuti fält och radbrytningar
+      // inuti fält.
+      function parseCsv(text) {
+        const rows = [];
+        let row = [];
+        let field = "";
+        let quoted = false;
+        for (let i = 0; i < text.length; i++) {
+          const c = text[i];
+          if (quoted) {
+            if (c === '"') {
+              if (text[i + 1] === '"') {
+                field += '"';
+                i++;
+              } else {
+                quoted = false;
+              }
+            } else {
+              field += c;
+            }
+          } else if (c === '"') {
+            quoted = true;
+          } else if (c === ",") {
+            row.push(field);
+            field = "";
+          } else if (c === "\n" || c === "\r") {
+            if (c === "\r" && text[i + 1] === "\n") i++;
+            row.push(field);
+            rows.push(row);
+            row = [];
+            field = "";
+          } else {
+            field += c;
+          }
+        }
+        if (field !== "" || row.length) {
+          row.push(field);
+          rows.push(row);
+        }
+        return rows.filter((r) => r.some((cell) => cell.trim() !== ""));
+      }
+
+      function renderSchema(rows) {
+        const table = document.getElementById("schema-table");
+        table.textContent = "";
+        const [header, ...body] = rows;
+
+        const thead = table.createTHead();
+        const hr = thead.insertRow();
+        for (const cell of header) {
+          const th = document.createElement("th");
+          th.scope = "col";
+          th.textContent = cell;
+          hr.appendChild(th);
+        }
+
+        const tbody = table.createTBody();
+        for (const r of body) {
+          const tr = tbody.insertRow();
+          for (let i = 0; i < header.length; i++) {
+            tr.insertCell().textContent = r[i] || "";
+          }
+          const week = (r[0] || "").match(/^v\.?\s*(\d+)/i);
+          if (week && currentWeek !== null && Number(week[1]) === currentWeek) {
+            tr.classList.add("current");
+          }
+          if (/no tuesday meetup|ingen träff/i.test(r[2] || "")) {
+            tr.classList.add("no-meetup");
+          }
+        }
+        table.hidden = false;
+      }
+
+      // Reservlösning: bädda in arket som förr och skala det till kortet.
+      const SCHEMA_W = 680;
       const SCHEMA_H = 890;
+      const MIN_SCALE = 0.85;
 
       function fitSchema() {
         const frame = document.querySelector(".schema-frame");
-        const scale = frame.clientWidth / SCHEMA_W;
+        const inner = document.querySelector(".schema-inner");
+        const scale = Math.max(frame.clientWidth / SCHEMA_W, MIN_SCALE);
         document.getElementById("tisdag-schema").style.transform =
           "scale(" + scale + ")";
-        frame.style.height = SCHEMA_H * scale + "px";
+        inner.style.width = SCHEMA_W * scale + "px";
+        inner.style.height = SCHEMA_H * scale + "px";
       }
-      window.addEventListener("resize", fitSchema);
-      fitSchema();
+
+      function showFallback() {
+        const frame = document.querySelector(".schema-frame");
+        const iframe = document.getElementById("tisdag-schema");
+        iframe.src = iframe.dataset.src;
+        frame.hidden = false;
+        window.addEventListener("resize", fitSchema);
+        fitSchema();
+      }
+
+      async function loadSchema() {
+        const status = document.getElementById("schema-status");
+        try {
+          const res = await fetch(SCHEMA_CSV, { cache: "no-cache" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const rows = parseCsv(await res.text());
+          if (rows.length < 2) throw new Error("tomt ark");
+          renderSchema(rows);
+          status.hidden = true;
+        } catch (e) {
+          status.hidden = true;
+          showFallback();
+        }
+      }
+      loadSchema();
 
       function propagateNavbarHeight() {
         let height = document.getElementById("header").offsetHeight;
